@@ -2,7 +2,7 @@
 
 ![](./images/screenshot.bmp)
 
-Origin https://github.com/Six-wars/django-chat
+Origin https://github.com/Six-wars/django-chat.
 
 Django Project with [ChatterBot](https://github.com/gunthercox/ChatterBot) as the chatbot. The frontend using VueJS.
 
