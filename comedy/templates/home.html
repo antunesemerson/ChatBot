@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block js %}
+  <script type="text/javascript" src="/static/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.js"></script>
+{% endblock %}
+
+{% block content %}
+			<div id="app" class="card">
+				<div class="card-header msg_head" style="background-color: #000080;">
+					<div>
+						<div class="user_info">
+							<span>Chat Bot</span>
+						</div>
+					</div>
+				</div>
+				<div v-chat-scroll class="card-body msg_card_body" id="style-3">
+					<div v-for="message in messages" v-bind:class="{ 'd-flex justify-content-start mb-4': message.user,  'd-flex justify-content-end mb-4': message.chat_bot}">
+						<div  v-bind:class="{ 'msg_cotainer': message.user,  'msg_cotainer_send': message.chat_bot}">
+							<div class="card-body">
+								[[message.text]]
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div id="text-box" class="input-group">
+						<div class="col-md-12">
+							<textarea class="form-control type_msg" placeholder="Digite sua mensagem..." v-on:keyup.enter="add_message" v-model="input" v-bind:class="{ 'border-danger': send_blank}" v-on:change="check_content"></textarea>
+							<div class="input-group-append">
+								<i class="fas fa-arrow-circle-right send-btn" v-on:click="add_message"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}
+
