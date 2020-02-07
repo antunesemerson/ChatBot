@@ -1,6 +1,8 @@
-# django-chat Version 1.0
+# ChatBot
 
 ![](./images/screenshot.bmp)
+
+Origin https://github.com/Six-wars/django-chat
 
 Django Project with [ChatterBot](https://github.com/gunthercox/ChatterBot) as the chatbot. The frontend using VueJS.
 
